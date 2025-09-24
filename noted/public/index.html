@@ -1,37 +1,42 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Notes App</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notes App</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="app">
-    <header>
-        <h1>Notes</h1>
-        <button id="newBtn">+ New Note</button>
+  <div class="app">
+    <!-- Header -->
+    <header class="app-header">
+      <h1>📝 Notes</h1>
+      <button id="newBtn" class="btn primary">+ New Note</button>
     </header>
 
-    <main>
-        <aside class="sidebar">
-            <input id="search" placeholder="Search notes..." />
-            <ul id="notesList"></ul>
-        </aside>
+    <!-- Main Layout -->
+    <main class="app-main">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <input id="search" type="text" placeholder="🔍 Search notes..." />
+        <ul id="notesList" class="notes-list"></ul>
+      </aside>
 
-        <section class="editor">
-            <form id="noteForm">
-                <input id="title" placeholder="Title" />
-                <textarea id="body" placeholder="Write your note..."></textarea>
-                <div class="actions">
-                    <button type="submit" id="saveBtn">Save</button>
-                    <button type="button" id="deleteBtn">Delete</button>
-                </div>
-            </form>
-        </section>
+      <!-- Editor -->
+      <section class="editor">
+        <form id="noteForm" class="note-form">
+          <input id="title" type="text" placeholder="Note title..." />
+          <textarea id="body" placeholder="Write your note here..."></textarea>
+
+          <div class="actions">
+            <button type="submit" id="saveBtn" class="btn success">💾 Save</button>
+            <button type="button" id="deleteBtn" class="btn danger">🗑 Delete</button>
+          </div>
+        </form>
+      </section>
     </main>
-</div>
+  </div>
 
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
