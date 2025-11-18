@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Notes App — Blockchain</title>
+  <title>Golden Notes App</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
 </head>
 <body>
   <div class="app">
     <!-- Header -->
     <header class="app-header">
-      <h1>📝 Notes (Blockchain)</h1>
+      <h1>📝 Golden Notes</h1>
       <div class="header-controls">
-        <button id="connectWalletBtn" class="btn wallet">🔗 Connect Wallet</button>
-        <span id="addressBadge" class="address-badge">Not connected</span>
+        <button id="connectWalletBtn" class="btn wallet">Connect Wallet</button>
+        <div id="walletAddress" class="address-badge"></div>
         <button id="newBtn" class="btn primary">+ New Note</button>
       </div>
     </header>
@@ -36,14 +37,13 @@
             <button type="submit" id="saveBtn" class="btn success">💾 Save</button>
             <button type="button" id="deleteBtn" class="btn danger">🗑 Delete</button>
           </div>
+
+          <div class="status" id="status"></div>
         </form>
-        <div id="status" class="status"></div>
       </section>
     </main>
   </div>
 
-  <!-- ethers (CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
