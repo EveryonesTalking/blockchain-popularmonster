@@ -5,16 +5,16 @@
 
 body {
   margin: 0;
-  background: linear-gradient(135deg, #1D1160, #E56020, #FFB347);
-  color: #111;
+  background: linear-gradient(135deg, #552583, #FDB927, #FFC72C);
+  color: #000;
 }
 
 .app {
   max-width: 1100px;
   margin: 40px auto;
-  background: #fff8f0;
+  background: #fff8ec;
   border-radius: 18px;
-  box-shadow: 0 14px 32px rgba(0,0,0,0.08);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.15);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -25,14 +25,15 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 22px 30px;
-  background: linear-gradient(90deg, #1D1160, #E56020);
+  background: linear-gradient(90deg, #552583, #FDB927);
 }
 
 header h1 {
   margin: 0;
   font-size: 22px;
   font-weight: 700;
-  color: #FFB347;
+  color: #FFFFFF;
+  text-shadow: 0px 0px 3px rgba(0,0,0,0.4);
 }
 
 .header-controls {
@@ -44,10 +45,10 @@ header h1 {
 .address-badge {
   padding: 8px 12px;
   border-radius: 10px;
-  background: #fff8f0;
-  border: 1px solid #E56020;
+  background: #fff8ec;
+  border: 1px solid #FDB927;
   font-size: 13px;
-  color: #1D1160;
+  color: #552583;
   max-width: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -64,7 +65,7 @@ button {
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, #1D1160, #E56020);
+  background: linear-gradient(135deg, #552583, #FDB927);
   color: #fff;
 }
 .btn.primary:hover {
@@ -72,20 +73,20 @@ button {
 }
 
 .btn.wallet {
-  background: linear-gradient(135deg, #FFB347, #E56020);
-  color: #1D1160;
+  background: linear-gradient(135deg, #FFC72C, #FDB927);
+  color: #552583;
 }
 .btn.wallet:hover {
   transform: translateY(-2px);
 }
 
 .btn.success {
-  background: linear-gradient(135deg, #FFB347, #E56020);
-  color: #1D1160;
+  background: linear-gradient(135deg, #FFC72C, #FDB927);
+  color: #552583;
 }
 
 .btn.danger {
-  background: linear-gradient(135deg, #B22222, #1D1160);
+  background: linear-gradient(135deg, #8B0000, #552583);
   color: #fff;
 }
 
@@ -97,8 +98,8 @@ main {
 .sidebar {
   width: 320px;
   padding: 16px;
-  background: #fff8f0;
-  border-right: 1px solid #E56020;
+  background: #fff8ec;
+  border-right: 1px solid #FDB927;
 }
 
 #search {
@@ -106,15 +107,15 @@ main {
   padding: 12px;
   margin-bottom: 16px;
   border-radius: 10px;
-  border: 1px solid #E56020;
+  border: 1px solid #FDB927;
   font-size: 14px;
-  background: #fff8f0;
+  background: #fff8ec;
 }
 
 #search:focus {
   outline: none;
-  border-color: #FFB347;
-  box-shadow: 0 0 0 3px rgba(255, 179, 71, 0.2);
+  border-color: #FFC72C;
+  box-shadow: 0 0 0 3px rgba(255, 199, 44, 0.25);
 }
 
 #notesList {
@@ -128,33 +129,33 @@ main {
   border-radius: 12px;
   margin-bottom: 12px;
   cursor: pointer;
-  background: #fff8f0;
+  background: #fff8ec;
   border: 1px solid transparent;
   transition: all .25s ease;
 }
 
 .note-item:hover {
-  background: #FFB347;
-  border-color: #E56020;
+  background: #FFC72C;
+  border-color: #552583;
   transform: translateY(-1px);
 }
 
 .note-item .title {
   font-weight: 600;
   font-size: 15px;
-  color: #1D1160;
+  color: #552583;
 }
 
 .note-item .meta {
   font-size: 12px;
-  color: #E56020;
+  color: #FDB927;
   margin-top: 4px;
 }
 
 .editor {
   flex: 1;
   padding: 24px 28px;
-  background: #fff8f0;
+  background: #fff8ec;
 }
 
 #title {
@@ -162,15 +163,15 @@ main {
   padding: 14px 16px;
   font-size: 18px;
   border-radius: 12px;
-  border: 1px solid #E56020;
+  border: 1px solid #FDB927;
   margin-bottom: 12px;
   font-weight: 600;
 }
 
 #title:focus {
-  border-color: #FFB347;
+  border-color: #FFC72C;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 179, 71, 0.2);
+  box-shadow: 0 0 0 3px rgba(255, 199, 44, 0.25);
 }
 
 #body {
@@ -178,16 +179,16 @@ main {
   height: 320px;
   padding: 14px 16px;
   border-radius: 12px;
-  border: 1px solid #E56020;
+  border: 1px solid #FDB927;
   resize: vertical;
   font-size: 14px;
   line-height: 1.5;
 }
 
 #body:focus {
-  border-color: #FFB347;
+  border-color: #FFC72C;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 179, 71, 0.2);
+  box-shadow: 0 0 0 3px rgba(255, 199, 44, 0.25);
 }
 
 .actions {
@@ -199,7 +200,7 @@ main {
 }
 
 .empty {
-  color: #1D1160;
+  color: #552583;
   padding: 28px;
   text-align: center;
   font-size: 15px;
@@ -208,5 +209,5 @@ main {
 .status {
   margin-top: 12px;
   font-size: 13px;
-  color: #E56020;
+  color: #FDB927;
 }
