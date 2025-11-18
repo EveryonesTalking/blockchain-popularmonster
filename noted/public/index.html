@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notes App — Blockchain</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="app-header">
+      <h1>📝 Notes (Blockchain)</h1>
+      <div class="header-controls">
+        <button id="connectWalletBtn" class="btn wallet">🔗 Connect Wallet</button>
+        <span id="addressBadge" class="address-badge">Not connected</span>
+        <button id="newBtn" class="btn primary">+ New Note</button>
+      </div>
+    </header>
+
+    <!-- Main Layout -->
+    <main class="app-main">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <input id="search" type="text" placeholder="🔍 Search notes..." />
+        <ul id="notesList" class="notes-list"></ul>
+      </aside>
+
+      <!-- Editor -->
+      <section class="editor">
+        <form id="noteForm" class="note-form">
+          <input id="title" type="text" placeholder="Note title..." />
+          <textarea id="body" placeholder="Write your note here..."></textarea>
+
+          <div class="actions">
+            <button type="submit" id="saveBtn" class="btn success">💾 Save</button>
+            <button type="button" id="deleteBtn" class="btn danger">🗑 Delete</button>
+          </div>
+        </form>
+        <div id="status" class="status"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ethers (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

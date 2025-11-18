@@ -1,0 +1,249 @@
+/* =========================================
+   GLOBAL + BASE UI
+========================================= */
+* {
+  box-sizing: border-box;
+  font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #dbeafe, #f0f9ff, #fefefe);
+  color: #111;
+}
+
+/* =========================================
+   APP CONTAINER
+========================================= */
+.app {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================
+   HEADER + WALLET AREA
+========================================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 30px;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(90deg, #f9fafc, #f3f7ff);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.address-badge {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  font-size: 13px;
+  color: #0f172a;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+button {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all .25s ease;
+}
+
+/* Create New Note */
+.btn.primary {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(37,99,235,0.25);
+}
+.btn.primary:hover { transform: translateY(-2px); }
+
+/* Wallet Button */
+.btn.wallet {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(16,185,129,0.25);
+}
+.btn.wallet:hover { transform: translateY(-2px); }
+
+/* Save */
+.btn.success {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+}
+
+/* Delete */
+.btn.danger {
+  background: linear-gradient(135deg, #ef4444,#dc2626);
+  color: #fff;
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+main {
+  display: flex;
+  min-height: 550px;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+.sidebar {
+  width: 320px;
+  border-right: 1px solid #e5e7eb;
+  padding: 16px;
+  background: #f8fafc;
+}
+
+#search {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+#search:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+}
+
+#notesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note-item {
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: #fff;
+  transition: all .25s ease;
+  box-shadow: 0 2px 6px rgba(19,23,36,0.05);
+}
+
+.note-item:hover {
+  background: #f0f6ff;
+  border-color: #d0e2ff;
+  transform: translateY(-1px);
+}
+
+.note-item .title {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.note-item .meta {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* =========================================
+   EDITOR AREA
+========================================= */
+.editor {
+  flex: 1;
+  padding: 24px 28px;
+  background: #fff;
+}
+
+#title {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  margin-bottom: 12px;
+  font-weight: 600;
+  transition: all .2s;
+}
+
+#title:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+}
+
+#body {
+  width: 100%;
+  height: 320px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  resize: vertical;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: all 0.2s ease;
+}
+
+#body:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+}
+
+/* =========================================
+   ACTION BAR
+========================================= */
+.actions {
+  margin-top: 16px;
+}
+
+.actions button:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+.empty {
+  color: #777;
+  padding: 28px;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* =========================================
+   STATUS TEXT
+========================================= */
+.status {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #334155;
+}
