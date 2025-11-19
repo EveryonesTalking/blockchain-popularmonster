@@ -1,3 +1,5 @@
+/* YOUR ORIGINAL CSS — NOT MODIFIED */
+
 * {
   box-sizing: border-box;
   font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
@@ -210,4 +212,87 @@ main {
   margin-top: 12px;
   font-size: 13px;
   color: #FDB927;
+}
+
+/* ---------------------------------------------------------
+   ⭐⭐ DARK MODE ADDITIONS (ONLY ADDED, NOTHING CHANGED)
+--------------------------------------------------------- */
+
+/* Floating Dark Mode Button */
+.dark-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 14px;
+  border-radius: 50%;
+  background: #552583;
+  color: white;
+  border: 2px solid #FDB927;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 999;
+  transition: all .25s ease;
+}
+.dark-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Dark Mode Base */
+body.dark {
+  background: linear-gradient(135deg, #1a1a1a, #3a0066, #b8860b);
+  color: #f8f8f8;
+}
+
+/* App Container */
+body.dark .app {
+  background: #1f1b24;
+  color: white;
+  box-shadow: 0 14px 32px rgba(255,255,255,0.05);
+}
+
+/* Header */
+body.dark header {
+  background: linear-gradient(90deg, #1a0033, #b8860b);
+}
+
+/* Wallet Badge */
+body.dark .address-badge {
+  background: #2a2431;
+  border: 1px solid #b8860b;
+  color: #f8e7b9;
+}
+
+/* Sidebar */
+body.dark .sidebar {
+  background: #1f1b24;
+  border-right: 1px solid #b8860b;
+}
+
+/* Search */
+body.dark #search {
+  background: #2a2431;
+  border-color: #b8860b;
+  color: white;
+}
+
+/* Notes List Items */
+body.dark .note-item {
+  background: #2a2431;
+}
+body.dark .note-item:hover {
+  background: #b8860b;
+  border-color: #fff;
+}
+
+/* Inputs */
+body.dark #title,
+body.dark #body {
+  background: #2a2431;
+  border-color: #b8860b;
+  color: white;
+}
+
+/* Status */
+body.dark .status {
+  color: #f8e7b9;
 }

@@ -154,3 +154,25 @@ searchEl.addEventListener('input', (e) => renderNotes(e.target.value));
 // INITIAL LOAD
 // ------------------------
 fetchNotes();
+
+/* ---------------------------------------------------------
+   ⭐⭐ DARK MODE SCRIPT (ONLY ADDED, NOTHING CHANGED ABOVE)
+--------------------------------------------------------- */
+
+const darkToggle = document.getElementById('darkModeToggle');
+
+// Load saved theme
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark');
+    darkToggle.textContent = '☀️';
+}
+
+// Toggle logic
+darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+
+    const isDark = document.body.classList.contains('dark');
+
+    darkToggle.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
