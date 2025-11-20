@@ -121,9 +121,7 @@ function renderGrid(list) {
     });
 }
 
-// -----------------------------
 // LOAD A NOTE INTO DRAWER
-// -----------------------------
 async function loadNote(id) {
     try {
         const res = await fetch(`${apiBase}/${id}`);
@@ -144,6 +142,26 @@ async function loadNote(id) {
         alert("Failed to load note");
     }
 }
+
+// DELETE
+deleteBtn.onclick = async () => {
+    if (!current) return alert("No note selected");
+    if (!confirm("Delete this note?")) return;
+
+    try {
+        const res = await fetch(`${apiBase}/${current}`, { method: "DELETE" });
+        if (res.ok) {
+            closeDrawer();
+            fetchNotes();
+        } else {
+            alert("Delete failed");
+        }
+    } catch (err) {
+        alert("Error deleting note");
+    }
+};
+
+
 
 // -----------------------------
 // NEW NOTE
@@ -198,25 +216,7 @@ noteForm.onsubmit = async (e) => {
     }
 };
 
-// -----------------------------
-// DELETE
-// -----------------------------
-deleteBtn.onclick = async () => {
-    if (!current) return alert("No note selected");
-    if (!confirm("Delete this note?")) return;
 
-    try {
-        const res = await fetch(`${apiBase}/${current}`, { method: "DELETE" });
-        if (res.ok) {
-            closeDrawer();
-            fetchNotes();
-        } else {
-            alert("Delete failed");
-        }
-    } catch (err) {
-        alert("Error deleting note");
-    }
-};
 
 // -----------------------------
 // FAVORITE FROM EDITOR
