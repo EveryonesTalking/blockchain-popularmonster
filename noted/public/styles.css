@@ -1,3 +1,4 @@
+/* === GLOBAL RESETS === */
 * {
   box-sizing: border-box;
   font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
@@ -5,34 +6,36 @@
 
 body {
   margin: 0;
-  background: linear-gradient(135deg, #552583, #FDB927, #FFC72C);
+  background: #ffe28a;
   color: #000;
 }
 
+/* === MAIN APP CONTAINER === */
 .app {
-  max-width: 1100px;
+  max-width: 1250px;
   margin: 40px auto;
-  background: #fff8ec;
-  border-radius: 18px;
+  background: #ffffff;
+  border-radius: 20px;
   box-shadow: 0 14px 32px rgba(0,0,0,0.15);
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
-header {
+/* === HEADER === */
+.app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 22px 30px;
-  background: linear-gradient(90deg, #552583, #FDB927);
+  background: linear-gradient(90deg, #bf9b30, #f1b502, #ffc004);
 }
 
-header h1 {
+.app-header h1 {
   margin: 0;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: 0px 0px 3px rgba(0,0,0,0.4);
 }
 
@@ -42,19 +45,7 @@ header h1 {
   gap: 12px;
 }
 
-.address-badge {
-  padding: 8px 12px;
-  border-radius: 10px;
-  background: #fff8ec;
-  border: 1px solid #FDB927;
-  font-size: 13px;
-  color: #552583;
-  max-width: 200px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
+/* === BUTTONS === */
 button {
   padding: 10px 18px;
   border-radius: 10px;
@@ -65,322 +56,312 @@ button {
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, #552583, #FDB927);
+  background: linear-gradient(135deg, #bf9b30, #f1b502);
   color: #fff;
-}
-.btn.primary:hover {
-  transform: translateY(-2px);
 }
 
 .btn.wallet {
-  background: linear-gradient(135deg, #FFC72C, #FDB927);
-  color: #552583;
-}
-.btn.wallet:hover {
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, #ffc004, #f1b502);
+  color: #000;
 }
 
 .btn.success {
-  background: linear-gradient(135deg, #FFC72C, #FDB927);
-  color: #552583;
+  background: #f1b502;
+  color: #000;
 }
 
 .btn.danger {
-  background: linear-gradient(135deg, #8B0000, #552583);
+  background: #bf9b30;
   color: #fff;
 }
 
-main {
+.btn.favorite {
+  background: #ffe28a;
+  border: 1px solid #bf9b30;
+  color: #bf9b30;
+}
+
+.btn.primary:hover,
+.btn.wallet:hover,
+.btn.success:hover,
+.btn.danger:hover,
+.btn.favorite:hover {
+  transform: translateY(-2px);
+}
+
+/* === NOTES GRID LAYOUT === */
+.app-main {
   display: flex;
-  min-height: 550px;
+  position: relative;
+  min-height: 600px;
 }
 
-.sidebar {
-  width: 320px;
-  padding: 16px;
-  background: #fff8ec;
-  border-right: 1px solid #FDB927;
+.notes-grid-section {
+  flex: 1;
+  padding: 20px;
+  background: #ffffff;
 }
 
-#search {
+.search-bar {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 16px;
-  border-radius: 10px;
-  border: 1px solid #FDB927;
-  font-size: 14px;
-  background: #fff8ec;
-}
-
-#search:focus {
-  outline: none;
-  border-color: #FFC72C;
-  box-shadow: 0 0 0 3px rgba(255, 199, 44, 0.25);
-}
-
-#notesList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.note-item {
-  padding: 14px 16px;
+  padding: 14px;
+  font-size: 15px;
   border-radius: 12px;
-  margin-bottom: 12px;
-  cursor: pointer;
+  border: 2px solid #ffc004;
+  margin-bottom: 20px;
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: #bf9b30;
+  box-shadow: 0 0 0 3px rgba(191,155,48,0.25);
+}
+
+/* === NOTES GRID === */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.note-card {
   background: #fff8ec;
-  border: 1px solid transparent;
+  border: 2px solid #ffe28a;
+  padding: 18px;
+  border-radius: 14px;
+  cursor: pointer;
   transition: all .25s ease;
+}
+
+.note-card:hover {
+  background: #ffc004;
+  border-color: #bf9b30;
+  transform: translateY(-3px);
+}
+
+.note-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #bf9b30;
+  margin-bottom: 8px;
+}
+
+.note-preview {
+  font-size: 13px;
+  color: #444;
+  max-height: 6.8em;
+  line-height: 1.35em;
+  overflow: hidden;
+  opacity: 0.9;
+  white-space: pre-wrap;
+}
+
+/* === SLIDE-IN EDITOR DRAWER === */
+.editor-drawer {
+  width: 420px;
+  background: #ffffff;
+  border-left: 3px solid #bf9b30;
+  position: absolute;
+  right: -500px;
+  top: 0;
+  height: 100%;
+  transition: right .35s ease;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-drawer.open {
+  right: 0;
+}
+
+.editor-header {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* ⭐ added to allow star button alignment */
+  align-items: center;
+  margin-bottom: 16px;
 }
 
-.note-item:hover {
-  background: #FFC72C;
-  border-color: #552583;
-  transform: translateY(-1px);
+.close-editor {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #bf9b30;
 }
 
-.note-item .title {
-  font-weight: 600;
-  font-size: 15px;
-  color: #552583;
-}
-
-.note-item .meta {
-  font-size: 12px;
-  color: #FDB927;
-  margin-top: 4px;
-}
-
-.editor {
-  flex: 1;
-  padding: 24px 28px;
-  background: #fff8ec;
-}
-
-#title {
+.title-input {
   width: 100%;
-  padding: 14px 16px;
-  font-size: 18px;
+  padding: 14px;
   border-radius: 12px;
-  border: 1px solid #FDB927;
+  border: 2px solid #ffc004;
   margin-bottom: 12px;
-  font-weight: 600;
 }
 
-#title:focus {
-  border-color: #FFC72C;
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 199, 44, 0.25);
-}
-
-#body {
+.body-input {
   width: 100%;
-  height: 320px;
-  padding: 14px 16px;
+  height: 280px;
+  padding: 14px;
   border-radius: 12px;
-  border: 1px solid #FDB927;
+  border: 2px solid #ffc004;
   resize: vertical;
   font-size: 14px;
-  line-height: 1.5;
 }
 
-#body:focus {
-  border-color: #FFC72C;
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 199, 44, 0.25);
+.font-selector {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border: 2px solid #ffc004;
 }
 
 .actions {
-  margin-top: 16px;
-}
-
-.actions button:hover {
-  transform: translateY(-2px);
-}
-
-.empty {
-  color: #552583;
-  padding: 28px;
-  text-align: center;
-  font-size: 15px;
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
 }
 
 .status {
-  margin-top: 12px;
-  font-size: 13px;
-  color: #FDB927;
+  margin-top: 14px;
+  font-size: 14px;
+  color: #bf9b30;
 }
 
-/* ---------------------------------------------------------
-   ⭐⭐ FAVORITES FEATURE (ADDED, NOTHING REMOVED)
---------------------------------------------------------- */
-
-/* Favorite button in editor */
-.btn.favorite {
-  background: #fff8ec;
-  color: #552583;
-  border: 1px solid #FDB927;
-  margin-bottom: 12px;
-  font-size: 15px;
-}
-.btn.favorite:hover {
-  background: #FFC72C;
-  transform: translateY(-2px);
-}
-
-/* Star icon inside each note */
-.favorite-star {
-  font-size: 20px;
-  color: #b8860b;
-  cursor: pointer;
-  margin-left: 10px;
-  user-select: none;
-}
-
-/* Highlight pinned notes */
-.note-item.favorite {
-  border-color: #b8860b !important;
-  background: #ffe9a8 !important;
-}
-
-/* Dark mode adjustment */
-body.dark .favorite-star {
-  color: #f8e7b9;
-}
-
-body.dark .note-item.favorite {
-  background: #5a4828 !important;
-  border-color: #e6c884 !important;
-}
-
-/* ---------------------------------------------------------
-   ⭐⭐ END FAVORITES ADDITIONS
---------------------------------------------------------- */
-
-
-/* ---------------------------------------------------------
-   ⭐⭐ DARK MODE (YOURS)
---------------------------------------------------------- */
-
+/* === DARK MODE === */
 .dark-toggle {
   position: fixed;
   top: 20px;
   right: 20px;
-  padding: 12px 14px;
+  padding: 12px;
   border-radius: 50%;
-  background: #552583;
-  color: white;
-  border: 2px solid #FDB927;
+  background: #bf9b30;
+  color: #fff;
+  border: 2px solid #f1b502;
   cursor: pointer;
   font-size: 18px;
   z-index: 999;
-  transition: all .25s ease;
-}
-.dark-toggle:hover {
-  transform: scale(1.1);
 }
 
 body.dark {
-  background: linear-gradient(135deg, #1a1a1a, #3a0066, #b8860b);
-  color: #f8f8f8;
+  background: #1e1e1e;
+  color: white;
 }
 
 body.dark .app {
-  background: #1f1b24;
-  color: white;
-  box-shadow: 0 14px 32px rgba(255,255,255,0.05);
+  background: #262626;
 }
 
-body.dark header {
-  background: linear-gradient(90deg, #1a0033, #b8860b);
+body.dark .notes-grid-section {
+  background: #262626;
 }
 
-body.dark .address-badge {
-  background: #2a2431;
-  border: 1px solid #b8860b;
-  color: #f8e7b9;
-}
-
-body.dark .sidebar {
-  background: #1f1b24;
-  border-right: 1px solid #b8860b;
-}
-
-body.dark #search {
-  background: #2a2431;
-  border-color: #b8860b;
+body.dark .note-card {
+  background: #333;
+  border-color: #bf9b30;
   color: white;
 }
 
-body.dark .note-item {
-  background: #2a2431;
+body.dark .note-card:hover {
+  background: #bf9b30;
+  color: #000;
 }
 
-body.dark .note-item:hover {
-  background: #b8860b;
-  border-color: #fff;
+body.dark .editor-drawer {
+  background: #2e2e2e;
+  border-left-color: #f1b502;
 }
 
-body.dark #title,
-body.dark #body {
-  background: #2a2431;
-  border-color: #b8860b;
+body.dark .title-input,
+body.dark .body-input,
+body.dark .font-selector {
+  background: #333;
+  border-color: #bf9b30;
   color: white;
 }
 
-body.dark .status {
-  color: #f8e7b9;
+body.dark .search-bar {
+  background: #333;
+  border-color: #bf9b30;
+  color: white;
 }
 
-/* ---------------------------------------------------------
-   FONTS INTEGRATION
---------------------------------------------------------- */
-* {
-  box-sizing: border-box;
-  font-family: 'Inter', 'Roboto', 'Segoe UI', Arial, sans-serif;
+/* ================================
+   STRONG DARK MODE OVERRIDES
+   Makes ALL white/light surfaces turn black
+   ================================ */
+body.dark {
+  background: #000 !important;
+  color: #f1b502 !important;
 }
 
-header h1 {
-  font-family: 'Pacifico', 'Inter', sans-serif;
+/* App container */
+body.dark .app {
+  background: #000 !important;
+  color: #f1b502 !important;
 }
 
-/* Sidebar & notes */
-.sidebar, #search, #notesList, .note-item {
-  font-family: 'Inter', 'Roboto', sans-serif;
+/* Header */
+body.dark .app-header {
+  background: linear-gradient(90deg, #000, #1a1a1a, #111) !important;
 }
 
-/* Editor inputs */
-#title, #body {
-  font-family: 'Inter', 'Roboto', sans-serif;
+body.dark .app-header h1 {
+  color: #f1b502 !important;
 }
 
-/* Favorite button */
-.btn.favorite, .fav-btn {
-  font-family: 'Inter', 'Roboto', sans-serif;
-  font-weight: 600;
+/* Notes grid section */
+body.dark .notes-grid-section {
+  background: #000 !important;
 }
 
-/* 🔥 FONT SELECTOR STYLES */
-.font-selector {
-  width: 100%;
-  padding: 12px 16px;
-  margin-bottom: 12px;
-  border-radius: 12px;
-  border: 1px solid #FDB927;
-  font-size: 14px;
-  background: #fff8ec;
-  color: #552583;
-  font-family: inherit; /* uses current font for dropdown text */
-  cursor: pointer;
+/* Search bar */
+body.dark .search-bar {
+  background: #111 !important;
+  border-color: #bf9b30 !important;
+  color: #f1b502 !important;
 }
 
-.font-selector:focus {
-  outline: none;
-  border-color: #FFC72C;
-  box-shadow: 0 0 0 3px rgba(255, 199, 44, 0.25);
+/* Note cards */
+body.dark .note-card {
+  background: #0d0d0d !important;
+  border-color: #bf9b30 !important;
+  color: #f1b502 !important;
+}
+
+body.dark .note-card:hover {
+  background: #bf9b30 !important;
+  color: #000 !important;
+}
+
+/* Editor drawer */
+body.dark .editor-drawer {
+  background: #000 !important;
+  border-left-color: #f1b502 !important;
+}
+
+/* Editor form fields */
+body.dark .title-input,
+body.dark .body-input,
+body.dark .font-selector {
+  background: #0d0d0d !important;
+  border-color: #bf9b30 !important;
+  color: #f1b502 !important;
+}
+
+/* Buttons */
+body.dark .btn {
+  filter: brightness(0.75);
+}
+
+body.dark .btn.favorite {
+  background: #0d0d0d !important;
+  border-color: #f1b502 !important;
+  color: #f1b502 !important;
+}
+
+/* Drawer close button */
+body.dark .close-editor {
+  color: #f1b502 !important;
 }
 

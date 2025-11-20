@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Golden Notes App</title>
-  
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,58 +15,64 @@
 </head>
 <body>
 
-  <!-- Dark Mode Toggle -->
-  <button id="darkModeToggle" class="dark-toggle">🌙</button>
+<!-- Dark Mode Toggle -->
+<button id="darkModeToggle" class="dark-toggle">🌙</button>
 
-  <div class="app">
-    <!-- Header -->
-    <header class="app-header">
-      <h1>📝 Golden Notes</h1>
-      <div class="header-controls">
-        <button id="connectWalletBtn" class="btn wallet">Connect Wallet</button>
-        <div id="walletAddress" class="address-badge"></div>
-        <button id="newBtn" class="btn primary">+ New Note</button>
+<div class="app">
+  <!-- Header -->
+  <header class="app-header">
+    <h1>📝 Golden Notes</h1>
+    <div class="header-controls">
+      <button id="connectWalletBtn" class="btn wallet">Connect Wallet</button>
+      <div id="walletAddress" class="address-badge"></div>
+      <button id="addNoteBtn" class="btn primary">＋</button>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <main class="app-main">
+
+    <!-- Notes Grid -->
+    <section class="notes-grid-section">
+      <input id="search" type="text" class="search-bar" placeholder="🔍 Search notes..." />
+
+      <div id="notesGrid" class="notes-grid"></div>
+    </section>
+
+    <!-- Slide-in Editor -->
+    <section id="editorDrawer" class="editor-drawer">
+      <div class="editor-header">
+        <h2 id="editorTitle">New Note</h2>
+        <button id="closeEditor" class="close-editor">✖</button>
       </div>
-    </header>
 
-    <!-- Main Layout -->
-    <main class="app-main">
-      <!-- Sidebar -->
-      <aside class="sidebar">
-        <input id="search" type="text" placeholder="🔍 Search notes..." />
-        <ul id="notesList" class="notes-list"></ul>
-      </aside>
+      <form id="noteForm" class="note-form">
+        <input id="title" type="text" placeholder="Note title..." class="title-input" />
 
-      <!-- Editor -->
-      <section class="editor">
-        <form id="noteForm" class="note-form">
-          <input id="title" type="text" placeholder="Note title..." />
+        <select id="fontSelector" class="font-selector">
+          <option value="'Inter', sans-serif">Inter</option>
+          <option value="'Roboto', sans-serif">Roboto</option>
+          <option value="Arial, sans-serif">Arial</option>
+          <option value="Georgia, serif">Georgia</option>
+          <option value="'Courier New', monospace">Courier New</option>
+        </select>
 
-          <!-- Font Selector -->
-          <select id="fontSelector" class="font-selector">
-            <option value="'Inter', sans-serif">Inter</option>
-            <option value="'Roboto', sans-serif">Roboto</option>
-            <option value="Arial, sans-serif">Arial</option>
-            <option value="Georgia, serif">Georgia</option>
-            <option value="Courier New, monospace">Courier New</option>
-          </select>
+        <textarea id="body" placeholder="Write your note here..." class="body-input"></textarea>
 
-          <textarea id="body" placeholder="Write your note here..."></textarea>
+        <button type="button" id="favoriteBtn" class="btn favorite">☆ Favorite</button>
 
-          <!-- Favorite -->
-          <button type="button" id="favoriteBtn" class="btn favorite">☆ Favorite</button>
+        <div class="actions">
+          <button type="submit" id="saveBtn" class="btn success">💾 Save</button>
+          <button type="button" id="deleteBtn" class="btn danger">🗑 Delete</button>
+        </div>
 
-          <div class="actions">
-            <button type="submit" id="saveBtn" class="btn success">💾 Save</button>
-            <button type="button" id="deleteBtn" class="btn danger">🗑 Delete</button>
-          </div>
+        <div class="status" id="status"></div>
+      </form>
+    </section>
 
-          <div class="status" id="status"></div>
-        </form>
-      </section>
-    </main>
-  </div>
+  </main>
+</div>
 
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
