@@ -8,8 +8,8 @@
 
 body {
   margin: 0;
-  background: linear-gradient(135deg, #002D62, #FFC72C); /* Pacers gradient */
-  color: #fff;
+  background: linear-gradient(135deg, #FDB927, #FFF8D1); /* Lakers Light Gold Gradient */
+  color: #000;
 }
 
 /* ---------------------------------------------------------
@@ -18,9 +18,9 @@ body {
 .app {
   max-width: 1100px;
   margin: 40px auto;
-  background: #fff9e5; /* soft gold background */
+  background: #FFF7CC; /* soft yellow gold */
   border-radius: 18px;
-  box-shadow: 0 14px 32px rgba(0,0,0,0.15);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.20);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -34,14 +34,14 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 22px 30px;
-  background: linear-gradient(90deg, #002D62, #FFC72C);
+  background: linear-gradient(90deg, #552583, #FDB927); /* Purple → Gold */
 }
 
 header h1 {
   margin: 0;
   font-size: 22px;
   font-weight: 700;
-  color: #FFC72C;
+  color: #FDEAA5; /* soft gold */
   text-shadow: 0px 0px 3px rgba(0,0,0,0.4);
 }
 
@@ -54,10 +54,10 @@ header h1 {
 .address-badge {
   padding: 8px 12px;
   border-radius: 10px;
-  background: #fff9e5;
-  border: 1px solid #002D62;
+  background: #FFF7CC;
+  border: 1px solid #552583;
   font-size: 13px;
-  color: #002D62;
+  color: #552583;
   max-width: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -77,7 +77,7 @@ button {
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, #002D62, #FFC72C);
+  background: linear-gradient(135deg, #552583, #FDB927);
   color: #fff;
 }
 .btn.primary:hover {
@@ -85,33 +85,33 @@ button {
 }
 
 .btn.wallet {
-  background: linear-gradient(135deg, #FFC72C, #002D62);
-  color: #002D62;
+  background: linear-gradient(135deg, #FDB927, #552583);
+  color: #552583;
 }
 .btn.wallet:hover {
   transform: translateY(-2px);
 }
 
 .btn.success {
-  background: linear-gradient(135deg, #FFC72C, #002D62);
-  color: #002D62;
+  background: linear-gradient(135deg, #FDB927, #552583);
+  color: #552583;
 }
 
 .btn.danger {
-  background: linear-gradient(135deg, #8B0000, #002D62);
+  background: linear-gradient(135deg, #7b0000, #552583);
   color: #fff;
 }
 
 .btn.favorite {
-  background: #fff9e5;
-  color: #002D62;
-  border: 1px solid #002D62;
+  background: #FFF7CC;
+  color: #552583;
+  border: 1px solid #552583;
   margin-bottom: 12px;
   font-size: 15px;
 }
 .btn.favorite:hover {
-  background: #FFC72C;
-  color: #002D62;
+  background: #FDB927;
+  color: #552583;
   transform: translateY(-2px);
 }
 
@@ -126,8 +126,8 @@ main {
 .sidebar {
   width: 320px;
   padding: 16px;
-  background: #fff9e5;
-  border-right: 1px solid #002D62;
+  background: #FFF7CC;
+  border-right: 1px solid #552583;
 }
 
 #search {
@@ -135,16 +135,16 @@ main {
   padding: 12px;
   margin-bottom: 16px;
   border-radius: 10px;
-  border: 1px solid #002D62;
+  border: 1px solid #552583;
   font-size: 14px;
-  background: #fff9e5;
-  color: #002D62;
+  background: #FFF7CC;
+  color: #552583;
 }
 
 #search:focus {
   outline: none;
-  border-color: #FFC72C;
-  box-shadow: 0 0 0 3px rgba(255,199,44,0.25);
+  border-color: #FDB927;
+  box-shadow: 0 0 0 3px rgba(253,185,39,0.35);
 }
 
 #notesList {
@@ -158,7 +158,7 @@ main {
   border-radius: 12px;
   margin-bottom: 12px;
   cursor: pointer;
-  background: #fff9e5;
+  background: #FFF7CC;
   border: 1px solid transparent;
   transition: all .25s ease;
   display: flex;
@@ -167,20 +167,20 @@ main {
 }
 
 .note-item:hover {
-  background: #FFC72C;
-  border-color: #002D62;
+  background: #FDB927;
+  border-color: #552583;
   transform: translateY(-1px);
 }
 
 .note-item .title {
   font-weight: 600;
   font-size: 15px;
-  color: #002D62;
+  color: #552583;
 }
 
 .note-item .meta {
   font-size: 12px;
-  color: #002D62;
+  color: #552583;
   margin-top: 4px;
 }
 
@@ -188,7 +188,7 @@ main {
 .editor {
   flex: 1;
   padding: 24px 28px;
-  background: #fff9e5;
+  background: #FFF7CC;
 }
 
 #title {
@@ -196,10 +196,10 @@ main {
   padding: 14px 16px;
   font-size: 18px;
   border-radius: 12px;
-  border: 1px solid #002D62;
+  border: 1px solid #552583;
   margin-bottom: 12px;
   font-weight: 600;
-  color: #002D62;
+  color: #552583;
 }
 
 #body {
@@ -207,12 +207,12 @@ main {
   height: 320px;
   padding: 14px 16px;
   border-radius: 12px;
-  border: 1px solid #002D62;
+  border: 1px solid #552583;
   resize: vertical;
   font-size: 14px;
   line-height: 1.5;
-  color: #002D62;
-  background: #fff9e5;
+  color: #552583;
+  background: #FFF7CC;
 }
 
 /* ---------------------------------------------------------
@@ -220,19 +220,19 @@ main {
 --------------------------------------------------------- */
 .favorite-star {
   font-size: 20px;
-  color: #FFC72C;
+  color: #FDB927;
   cursor: pointer;
   margin-left: 10px;
   user-select: none;
 }
 
 .note-item.favorite {
-  border-color: #FFC72C !important;
-  background: #FFF3B0 !important;
+  border-color: #FDB927 !important;
+  background: #FFEB8A !important;
 }
 
 /* ---------------------------------------------------------
-   DARK MODE
+   DARK MODE (Kobe Era Purple & Gold)
 --------------------------------------------------------- */
 .dark-toggle {
   position: fixed;
@@ -240,9 +240,9 @@ main {
   right: 20px;
   padding: 12px 14px;
   border-radius: 50%;
-  background: #002D62;
-  color: #FFC72C;
-  border: 2px solid #FFC72C;
+  background: #552583;
+  color: #FDB927;
+  border: 2px solid #FDB927;
   cursor: pointer;
   font-size: 18px;
   z-index: 999;
@@ -253,74 +253,74 @@ main {
 }
 
 body.dark {
-  background: linear-gradient(135deg, #001f33, #003366);
-  color: #FFC72C; /* Gold font color */
+  background: linear-gradient(135deg, #1A0B2E, #552583); /* Deep Purple Kobe vibe */
+  color: #FDB927;
 }
 
 body.dark .app {
-  background: #002244;
-  color: #FFC72C;
-  box-shadow: 0 14px 32px rgba(255,199,44,0.05);
+  background: #2D1A47;
+  color: #FDB927;
+  box-shadow: 0 14px 32px rgba(253,185,39,0.10);
 }
 
 body.dark header {
-  background: linear-gradient(90deg, #001f33, #002D62);
+  background: linear-gradient(90deg, #1A0B2E, #552583);
 }
 
 body.dark header h1 {
-  color: #FFC72C;
+  color: #FDB927;
   text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
 }
 
 body.dark .address-badge {
-  background: #002D62;
-  border: 1px solid #FFC72C;
-  color: #FFC72C;
+  background: #2D1A47;
+  border: 1px solid #FDB927;
+  color: #FDB927;
 }
 
 body.dark .sidebar {
-  background: #002244;
-  border-right: 1px solid #FFC72C;
+  background: #2D1A47;
+  border-right: 1px solid #FDB927;
 }
 
 body.dark #search {
-  background: #002D62;
-  border-color: #FFC72C;
-  color: #FFC72C;
+  background: #552583;
+  border-color: #FDB927;
+  color: #FDB927;
 }
 
 body.dark .note-item {
-  background: #002D62;
-  color: #FFC72C;
+  background: #552583;
+  color: #FDB927;
 }
 
 body.dark .note-item .title,
 body.dark .note-item .meta {
-  color: #FFC72C;
+  color: #FDB927;
 }
 
 body.dark .note-item:hover {
-  background: #FFC72C;
+  background: #FDB927;
   border-color: #fff;
-  color: #002D62;
+  color: #552583;
 }
 
 body.dark #title,
 body.dark #body {
-  background: #002D62;
-  border-color: #FFC72C;
-  color: #FFC72C;
+  background: #552583;
+  border-color: #FDB927;
+  color: #FDB927;
 }
 
 body.dark .status {
-  color: #FFC72C;
+  color: #FDB927;
 }
 
 body.dark .favorite-star {
-  color: #FFC72C;
+  color: #FDB927;
 }
 
 body.dark .note-item.favorite {
   background: #FFD966 !important;
-  border-color: #FFC72C !important;
+  border-color: #FDB927 !important;
 }
