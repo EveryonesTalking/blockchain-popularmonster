@@ -53,21 +53,6 @@ notes-application-blockchain/
 └── README.md                   # Project documentation
 ```
 
----
-
-## Development Team
-
-*2AM DISCORD DECISIONS*
-
-- **Cantiller, Christian Jayson J.** *(Frontend Dev)*
-- **Diva, Justin Andry N.** *(Frontend Dev)*
-- **Lada, Nathan Xander** *(Backend Dev)*
-- **Go, Felix Christian T.** *(Frontend Dev)*
-
----
-
-## Quick Start
-
 ### Prerequisites
 - Java 21+ installed
 - Node.js 16+ installed
