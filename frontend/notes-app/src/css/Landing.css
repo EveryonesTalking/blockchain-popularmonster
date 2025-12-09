@@ -1,0 +1,438 @@
+/* Container */
+.dashboard {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background: #f8f9fc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background: #1e293b;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar Header */
+.sidebarHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+}
+
+.logoSection {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logoIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #6366f1;
+    border-radius: 8px;
+    padding: 8px;
+    width: 32px;
+    height: 32px;
+}
+
+.logoIcon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.logoText {
+    display: flex;
+    flex-direction: column;
+}
+
+.logoTitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+}
+
+.logoSubtitle {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+/* Search */
+.searchBox {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px 12px 10px 38px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    outline: none;
+    background: #334155;
+    color: white;
+    box-sizing: border-box;
+}
+
+.searchInput::placeholder {
+    color: #64748b;
+}
+
+.searchInput:focus {
+    background: #475569;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.navItem {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    text-align: left;
+    padding: 12px 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.navItem:hover {
+    background: #334155;
+    color: white;
+}
+
+.navItemActive {
+    background: #6366f1 !important;
+    color: white !important;
+}
+
+/* User Section - Now Clickable */
+.sidebarBottom {
+    border-top: 1px solid #334155;
+    padding-top: 16px;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 8px;
+    padding: 12px 8px;
+    margin: 16px -8px 0;
+}
+
+.sidebarBottom:hover {
+    background: #334155;
+}
+
+.userAvatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #6366f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.userAvatarImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.userAvatarInitials {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userInfo {
+    flex: 1;
+}
+
+.userName {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+}
+
+.userRole {
+    font-size: 12px;
+    color: #64748b;
+    margin: 0;
+}
+
+.loginButton {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.loginButton:hover {
+    background: #475569;
+    color: white;
+}
+
+/* Main Content */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    overflow-y: auto;
+    background: white;
+}
+
+/* Notes Section */
+.notesSection {
+    flex: 1;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.sectionTitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.notesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.noteCard {
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    position: relative;
+}
+
+.noteCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.noteDate {
+    font-size: 11px;
+    color: #64748b;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.noteTitle {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1e293b;
+}
+
+.noteText {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* Note Delete Button */
+.noteDeleteBtn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.noteCard:hover .noteDeleteBtn {
+    opacity: 1;
+}
+
+.noteDeleteBtn:hover {
+    background: rgba(220, 38, 38, 0.9);
+    color: white;
+    transform: scale(1.1);
+}
+
+.newNote {
+    background: white;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 14px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 160px;
+    transition: all 0.2s;
+}
+
+.newNote:hover {
+    border-color: #6366f1;
+    color: #6366f1;
+    background: #f8f9fc;
+}
+
+/* Note Colors */
+.noteCard.yellow {
+    background: #fef3c7;
+    border-color: #fbbf24;
+}
+
+.noteCard.red {
+    background: #fee2e2;
+    border-color: #f87171;
+}
+
+.noteCard.blue {
+    background: #dbeafe;
+    border-color: #60a5fa;
+}
+
+.noteCard.green {
+    background: #d1fae5;
+    border-color: #34d399;
+}
+
+.noteCard.purple {
+    background: #e9d5ff;
+    border-color: #a78bfa;
+}
+
+.noteCard.pink {
+    background: #fce7f3;
+    border-color: #f472b6;
+}
+
+/* Wallet and Profile Container */
+.walletContainer,
+.profileContainer {
+    background: white;
+    border-radius: 12px;
+    padding: 32px;
+}
+
+/* Scrollbar */
+.main::-webkit-scrollbar {
+    width: 6px;
+}
+
+.main::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.main::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.main::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 240px;
+    }
+    
+    .notesGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .main {
+        padding: 20px;
+    }
+}
+
+/* Reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}

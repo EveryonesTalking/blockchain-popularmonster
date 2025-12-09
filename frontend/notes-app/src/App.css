@@ -1,0 +1,196 @@
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #2d2d2d;
+  color: #ffffff;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #2d2d2d;
+}
+
+/* Header Styles */
+.header {
+  background-color: #1e1e1e;
+  padding: 8px 16px;
+  border-bottom: 1px solid #404040;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+}
+
+.menu-bar {
+  display: flex;
+  gap: 0;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  font-family: inherit;
+}
+
+.menu-button:hover {
+  background-color: #404040;
+}
+
+.menu-button:focus {
+  outline: none;
+}
+
+/* Account Section */
+.account-section {
+  position: relative;
+}
+
+.account-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.account-button:hover {
+  background-color: #404040;
+}
+
+.account-button:focus {
+  outline: none;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2d2d2d;
+  border: 1px solid #404040;
+  min-width: 160px;
+  z-index: 1001;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.account-dropdown {
+  right: 0;
+  left: auto;
+  min-width: 120px;
+}
+
+.dropdown-item {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #404040;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover:not(.placeholder) {
+  background-color: #404040;
+}
+
+.dropdown-item.placeholder {
+  color: #888888;
+  font-style: italic;
+  cursor: default;
+  font-size: 12px;
+}
+
+/* Text Editor Styles */
+.text-editor-container {
+  flex: 1;
+  display: flex;
+  background-color: #2d2d2d;
+}
+
+.text-editor {
+  width: 100%;
+  height: 100%;
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  padding: 20px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  resize: none;
+  overflow-y: auto;
+}
+
+.text-editor::placeholder {
+  color: #888888;
+  font-style: italic;
+}
+
+.text-editor::-webkit-scrollbar {
+  width: 12px;
+}
+
+.text-editor::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+.text-editor::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 6px;
+}
+
+.text-editor::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    padding: 6px 12px;
+  }
+  
+  .menu-button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  
+  .text-editor {
+    padding: 15px;
+    font-size: 13px;
+  }
+  
+  .dropdown {
+    min-width: 140px;
+  }
+}

@@ -1,0 +1,209 @@
+/* Header Component Styles */
+.header {
+  background: #1e293b;
+  padding: 16px 24px;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.home-button {
+  background: none;
+  border: none;
+  color: #e2e8f0;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.home-button:hover {
+  background-color: #334155;
+}
+
+.menu-bar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.back-btn {
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  margin-right: 16px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.back-btn:hover {
+  background-color: #4f46e5;
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.5);
+  transform: translateY(-1px);
+}
+
+.back-btn:active {
+  transform: translateY(0);
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.menu-button:hover {
+  background-color: #334155;
+  color: #e2e8f0;
+}
+
+.account-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.account-section span {
+  color: #e2e8f0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.account-button {
+  background: #334155;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.account-button:hover {
+  background-color: #475569;
+  color: #e2e8f0;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 8px 0;
+  min-width: 200px;
+  z-index: 1000;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease-in-out;
+}
+
+.dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  padding: 12px 18px;
+  color: #e2e8f0;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  margin: 2px 8px;
+}
+
+.dropdown-item:hover {
+  background-color: #334155;
+  color: #6366f1;
+}
+
+.dropdown-item.placeholder {
+  color: #64748b;
+  cursor: default;
+  font-style: italic;
+  padding: 10px 18px;
+}
+
+.dropdown-item.placeholder:hover {
+  background-color: transparent;
+  color: #64748b;
+}
+
+.dropdown-item.logout-item {
+  border-top: 1px solid #334155;
+  margin-top: 8px;
+  padding-top: 12px;
+  color: #f87171;
+}
+
+.dropdown-item.logout-item:hover {
+  background-color: rgba(248, 113, 113, 0.1);
+  color: #fca5a5;
+}
+
+/* Account dropdown should align to the right */
+.account-dropdown {
+  right: 0;
+  left: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 16px;
+  }
+  
+  .back-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+  
+  .menu-button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  .account-section span {
+    display: none;
+  }
+}
