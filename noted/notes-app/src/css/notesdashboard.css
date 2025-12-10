@@ -1,0 +1,36 @@
+.ND-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.ND-title {
+    margin-bottom: 10px;
+}
+
+.ND-add-btn {
+    padding: 8px 15px;
+    background: #6d5dfc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.ND-notes-list {
+    display: flex;
+    gap: 15px;
+}
+
+.ND-note-card {
+    width: 200px;
+    padding: 15px;
+    background: #000000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.ND-note-card:hover {
+    background: #e8e5ff;
+}
