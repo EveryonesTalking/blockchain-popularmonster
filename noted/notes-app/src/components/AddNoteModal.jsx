@@ -5,19 +5,27 @@ const AddNoteModal = ({ onClose }) => {
     return (
         <div className="modal-overlay">
             <div className="modal-container">
-                <h2>Add Note (Placeholder)</h2>
+
+                <button className="modal-close" onClick={onClose}>×</button>
+
+                <h2 className="modal-title">Add New Note</h2>
 
                 <input
+                    className="modal-input"
                     type="text"
-                    placeholder="Enter note title..."
+                    placeholder="Note title..."
                 />
 
                 <textarea
-                    placeholder="Enter note content..."
+                    className="modal-textarea"
+                    placeholder="Write your note here..."
                 ></textarea>
 
-                <button>Add Note</button>
-                <button onClick={onClose}>Close</button>
+                <div className="modal-actions">
+                    <button className="modal-btn modal-btn-primary">Add Note</button>
+                    <button className="modal-btn modal-btn-secondary" onClick={onClose}>Cancel</button>
+                </div>
+
             </div>
         </div>
     );

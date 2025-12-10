@@ -1,10 +1,26 @@
+
 /* Full dashboard wrapper */
 .db-container {
+    background: url('/src/assets/bg.gif') no-repeat center center;
+    background-size: cover;
+    backdrop-filter: blur(8px);
     height: 100vh;
     width: 100vw;
-    background: #232323;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+}
+
+.db-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for contrast */
+    z-index: 0;
 }
 
 /* Main content area */
@@ -14,84 +30,102 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    padding-top: 40px;
+    animation: fadeIn 0.6s ease;
+
 }
 
 /* Grid — 3 per row, centered */
 .db-notes-grid {
-    width: 80%;
-    max-width: 1100px;
+    width: 90%;
+    max-width: 1200px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 50px;
 }
 
-/* Horizontal rectangular note cards */
+/* Modern glassy rectangular note cards */
 .db-note-card {
-    background: #3d3d3d;
-    border-radius: 10px;
-    height: 140px; /* RECTANGULAR horizontally */
+    background: rgba(45, 45, 45, 0.65);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(90, 90, 90, 0.3);
+    border-radius: 14px;
+    height: 150px;
+    padding: 18px;
+    width: 100%;
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: 0.25s ease;
+    box-shadow: 0 0 0 transparent;
 }
 
 .db-note-card:hover {
-    background: #4a4a4a;
-    box-shadow: 0 0 12px rgba(0, 255, 127, 0.5);
+    background: rgba(60, 60, 60, 0.7);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(0, 255, 127, 0.25);
+    border-color: rgba(0, 255, 127, 0.4);
 }
 
 /* Floating Add Note button */
 .db-add-btn {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 55px;
-    height: 55px;
-    background: #00ff7f;
+    top: 25px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #00ff7f, #00d96b);
     border: none;
     color: #000;
     font-size: 2rem;
     font-weight: bold;
+    border-radius: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: 0.25s ease;
+    box-shadow: 0 2px 15px rgba(0, 255, 127, 0.3);
 }
 
 .db-add-btn:hover {
-    transform: scale(1.12);
-    box-shadow: 0 0 15px #00ff7f;
+    transform: scale(1.13);
+    box-shadow: 0 0 22px rgba(0, 255, 127, 0.5);
 }
 
-/* Modal overlay stays the same */
+/* Modal overlay */
 .modal-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 99;
 }
 
+/* Typography */
 .db-note-title {
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
+    color: #e8ffe8;
+    font-size: 1.1rem;
+    font-weight: 600;
     margin-bottom: 6px;
+    letter-spacing: 0.3px;
 }
 
 .db-note-preview {
-    color: #cfcfcf;
-    font-size: 0.85rem;
-    opacity: 0.9;
-    line-height: 1.2;
+    color: #c9e6c9;
+    font-size: 0.9rem;
+    opacity: 0.85;
+    line-height: 1.3;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* show only 2 lines */
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+}
+
+/* Subtle page fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

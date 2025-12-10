@@ -4,15 +4,16 @@ import { getFirestore } from "firebase/firestore";
 
 // Replace with your Firebase project info
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyCBIIdCUE0jKvK7eWOwr2Pcb1Bfc_8_nDA",
+    authDomain: "glyph-fe7c7.firebaseapp.com",
+    projectId: "glyph-fe7c7",
+    storageBucket: "glyph-fe7c7.firebasestorage.app",
+    messagingSenderId: "381693459280",
+    appId: "1:381693459280:web:903135f77121531ed00a55",
+    measurementId: "G-DKETX41HTW"
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const analytics = getAnalytics(app);
 
 export { db };

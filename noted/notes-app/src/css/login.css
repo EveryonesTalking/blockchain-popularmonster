@@ -78,3 +78,11 @@ html, body {
     transform: scale(1.05);
     box-shadow: 0 0 20px #00ff7f, 0 0 30px #00ffd0;
 }
+
+.login-error {
+    margin-top: 15px;
+    color: #ff8a8a;
+    font-size: 1rem;
+    text-shadow: 0 0 6px rgba(255, 80, 80, 0.6);
+}
+

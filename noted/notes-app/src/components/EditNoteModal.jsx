@@ -5,21 +5,29 @@ const EditNoteModal = ({ note, onClose }) => {
     return (
         <div className="modal-overlay">
             <div className="modal-container">
-                <h2>Edit Note (Placeholder)</h2>
+
+                <button className="modal-close" onClick={onClose}>×</button>
+
+                <h2 className="modal-title">Edit Note</h2>
 
                 <input
+                    className="modal-input"
                     type="text"
                     defaultValue={note?.title || ""}
                     placeholder="Note title"
                 />
 
                 <textarea
+                    className="modal-textarea"
                     defaultValue={note?.content || ""}
                     placeholder="Note content"
                 ></textarea>
 
-                <button>Save Changes</button>
-                <button onClick={onClose}>Close</button>
+                <div className="modal-actions">
+                    <button className="modal-btn modal-btn-primary">Save Changes</button>
+                    <button className="modal-btn modal-btn-secondary" onClick={onClose}>Cancel</button>
+                </div>
+
             </div>
         </div>
     );
