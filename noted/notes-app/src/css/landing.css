@@ -1,0 +1,77 @@
+/* Make body and html full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden; /* Optional: prevents scrollbars for fullscreen */
+}
+
+/* Landing page container with fullscreen background GIF */
+.landing-container {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    width: 100vw;  /* Full viewport width */
+    background: url('/src/assets/bg.gif') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dark overlay + blur effect */
+.landing-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.5); /* Green/black vibe overlay */
+    z-index: 0;
+}
+
+/* Content wrapper */
+.landing-content {
+    position: relative;
+    z-index: 1; /* Above overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+    color: #00ff7f; /* Neon green */
+    padding: 20px;
+}
+
+/* Title */
+.landing-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Intro text */
+.landing-intro {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+/* Button */
+.landing-button {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    color: #000;
+    background-color: #00ff7f;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.landing-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00ff7f;
+}
