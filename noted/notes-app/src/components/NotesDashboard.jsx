@@ -1,35 +1,28 @@
 import React, { useState } from "react";
+import Header from "../components/Navbar";
 import AddNoteModal from "../components/AddNoteModal";
 import EditNoteModal from "../components/EditNoteModal";
-import "../css/notesdashboard.css";
 
-function NotesDashboard() {
+export default function NotesDashboard() {
     const [showAddModal, setShowAddModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);
     const [selectedNote, setSelectedNote] = useState(null);
 
-    // Hardcoded sample notes
     const notes = [
         { id: 1, title: "First Note", content: "This is the first sample note." },
-        { id: 2, title: "Second Note", content: "This is the second sample note." }
+        { id: 2, title: "Second Note", content: "This is the second sample note." },
     ];
 
     return (
-        <div className="ND-container">
-            <h1 className="ND-title">Notes Dashboard</h1>
+        <div>
+            <Header />
 
-            <button
-                className="ND-add-btn"
-                onClick={() => setShowAddModal(true)}
-            >
-                + Add Note
-            </button>
+            <button onClick={() => setShowAddModal(true)}>+ Add Note</button>
 
-            <div className="ND-notes-list">
-                {notes.map(note => (
+            <div>
+                {notes.map((note) => (
                     <div
                         key={note.id}
-                        className="ND-note-card"
                         onClick={() => {
                             setSelectedNote(note);
                             setShowEditModal(true);
@@ -41,18 +34,8 @@ function NotesDashboard() {
                 ))}
             </div>
 
-            {showAddModal && (
-                <AddNoteModal onClose={() => setShowAddModal(false)} />
-            )}
-
-            {showEditModal && (
-                <EditNoteModal
-                    note={selectedNote}
-                    onClose={() => setShowEditModal(false)}
-                />
-            )}
+            {showAddModal && <AddNoteModal onClose={() => setShowAddModal(false)} />}
+            {showEditModal && <EditNoteModal note={selectedNote} onClose={() => setShowEditModal(false)} />}
         </div>
     );
 }
-
-export default NotesDashboard;
