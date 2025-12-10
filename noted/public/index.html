@@ -24,7 +24,8 @@
       <h1>📝 Popular Monster Notes</h1>
       <div class="header-controls">
         <button id="connectWalletBtn" class="btn wallet">Connect Wallet</button>
-        <div id="walletAddress" class="address-badge"></div>
+        <!-- Optional global wallet display -->
+        <div id="walletAddressHeader" class="address-badge"></div>
         <button id="newBtn" class="btn primary">+ New Note</button>
       </div>
     </header>
@@ -53,8 +54,11 @@
 
           <textarea id="body" placeholder="Write your note here..."></textarea>
 
-          <!-- Favorite -->
-          <button type="button" id="favoriteBtn" class="btn favorite">☆ Favorite</button>
+          <!-- Favorite + Wallet Address -->
+          <div class="editor-controls" style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+            <button type="button" id="favoriteBtn" class="btn favorite">☆ Favorite</button>
+            <span id="walletAddress" class="address-badge" style="display:none; font-size:0.9em; opacity:0.7;"></span>
+          </div>
 
           <div class="actions">
             <button type="submit" id="saveBtn" class="btn success">💾 Save</button>
