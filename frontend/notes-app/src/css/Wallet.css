@@ -37,6 +37,19 @@
   font-size: 28px;
   font-weight: 700;
   color: #1e293b;
+  /* Added dark mode support to ensure text is visible in both light and dark themes */
+}
+
+@media (prefers-color-scheme: dark) {
+  .wallet-header-text h2 {
+    color: #f1f5f9;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .wallet-header-text h2 {
+    color: #1e293b;
+  }
 }
 
 .wallet-header-badge {
@@ -247,8 +260,13 @@
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 .wallet-disconnect-btn {
@@ -295,7 +313,7 @@
 }
 
 .wallet-address-value span {
-  font-family: 'Monaco', 'Menlo', monospace;
+  font-family: "Monaco", "Menlo", monospace;
   font-size: 13px;
   color: #1e293b;
 }
@@ -430,7 +448,9 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Alerts */
@@ -468,7 +488,7 @@
 }
 
 .wallet-tx-hash {
-  font-family: 'Monaco', 'Menlo', monospace;
+  font-family: "Monaco", "Menlo", monospace;
   font-size: 12px !important;
   word-break: break-all;
   margin-bottom: 12px !important;
